@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  AidDrop
 //
 //  Created by John Corry on 12/13/17.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MainViewController: UITabBarController {
+    
+    var dropController = DropController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {

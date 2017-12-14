@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6921FE15966007FD1C1 /* AppDelegate.swift */; };
-		D842A6951FE15966007FD1C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6941FE15966007FD1C1 /* ViewController.swift */; };
+		D842A6951FE15966007FD1C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6941FE15966007FD1C1 /* MainViewController.swift */; };
 		D842A6981FE15966007FD1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D842A6961FE15966007FD1C1 /* Main.storyboard */; };
 		D842A69A1FE15966007FD1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D842A6991FE15966007FD1C1 /* Assets.xcassets */; };
 		D842A69D1FE15966007FD1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D842A69B1FE15966007FD1C1 /* LaunchScreen.storyboard */; };
+		D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */; };
+		D842A6A81FE16B9B007FD1C1 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A71FE16B9B007FD1C1 /* Drop.swift */; };
+		D842A6AA1FE1744F007FD1C1 /* DropController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A91FE1744F007FD1C1 /* DropController.swift */; };
+		D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6AB1FE1D3C4007FD1C1 /* ViewDropsViewController.swift */; };
+		D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */; };
+		D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */; };
+		D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D842A68F1FE15966007FD1C1 /* AidDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AidDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D842A6921FE15966007FD1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D842A6941FE15966007FD1C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D842A6941FE15966007FD1C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D842A6971FE15966007FD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D842A6991FE15966007FD1C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D842A69C1FE15966007FD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D842A69E1FE15966007FD1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropAidViewController.swift; sourceTree = "<group>"; };
+		D842A6A71FE16B9B007FD1C1 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
+		D842A6A91FE1744F007FD1C1 /* DropController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropController.swift; sourceTree = "<group>"; };
+		D842A6AB1FE1D3C4007FD1C1 /* ViewDropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsViewController.swift; sourceTree = "<group>"; };
+		D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewController.swift; sourceTree = "<group>"; };
+		D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsMapViewController.swift; sourceTree = "<group>"; };
+		D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,29 @@
 		D842A6911FE15966007FD1C1 /* AidDrop */ = {
 			isa = PBXGroup;
 			children = (
+				D842A6A61FE16B7E007FD1C1 /* Models */,
 				D842A6921FE15966007FD1C1 /* AppDelegate.swift */,
-				D842A6941FE15966007FD1C1 /* ViewController.swift */,
+				D842A6941FE15966007FD1C1 /* MainViewController.swift */,
 				D842A6961FE15966007FD1C1 /* Main.storyboard */,
+				D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */,
 				D842A6991FE15966007FD1C1 /* Assets.xcassets */,
 				D842A69B1FE15966007FD1C1 /* LaunchScreen.storyboard */,
 				D842A69E1FE15966007FD1C1 /* Info.plist */,
+				D842A6AB1FE1D3C4007FD1C1 /* ViewDropsViewController.swift */,
+				D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */,
+				D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */,
+				D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */,
 			);
 			path = AidDrop;
+			sourceTree = "<group>";
+		};
+		D842A6A61FE16B7E007FD1C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D842A6A71FE16B9B007FD1C1 /* Drop.swift */,
+				D842A6A91FE1744F007FD1C1 /* DropController.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +165,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D842A6951FE15966007FD1C1 /* ViewController.swift in Sources */,
+				D842A6951FE15966007FD1C1 /* MainViewController.swift in Sources */,
 				D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */,
+				D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */,
+				D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */,
+				D842A6A81FE16B9B007FD1C1 /* Drop.swift in Sources */,
+				D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */,
+				D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */,
+				D842A6AA1FE1744F007FD1C1 /* DropController.swift in Sources */,
+				D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
