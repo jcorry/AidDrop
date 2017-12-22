@@ -107,6 +107,7 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            locationManager = CLLocationManager()
             locationManager.requestWhenInUseAuthorization()
         }
     }

@@ -34,7 +34,7 @@ class ViewDropsTableViewCell: UITableViewCell {
         let components = Calendar.current.dateComponents([.hour, .minute], from: dropTime, to: now)
 
         
-        var dropAgeString = "9 min"
+        var dropAgeString = "\(components.minute!) min"
 /**
         if components.hour > 0 {
             dropAgeString += "\(components.hour) hr "
