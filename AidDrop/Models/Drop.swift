@@ -10,11 +10,12 @@ import MapKit
 import CoreLocation
 
 class Drop: NSObject, MKAnnotation {
-    let location: CLLocation
-    let coordinate: CLLocationCoordinate2D
-    let aidType: AidType
-    let quantity: Int?
-    let timestamp: Date
+    var location: CLLocation
+    var coordinate: CLLocationCoordinate2D
+    var aidType: AidType
+    var quantity: Int?
+    var timestamp: Date
+    var notes: String?
     
     init(location: CLLocation, aidType: AidType, quantity: Int?) {
         self.location = location

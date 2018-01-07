@@ -137,64 +137,80 @@
         <scene sceneID="CVT-lK-CaQ">
             <objects>
                 <viewController title="Drop Aid" id="D9A-D8-vxm" customClass="DropAidViewController" customModule="AidDrop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tep-Mb-hyw">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" id="j2V-Yr-hAW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFU-Le-1hQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSm-Xy-7IX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="WbD-Qe-gBB"/>
+                                    <constraint firstAttribute="height" constant="375" id="Kmi-I8-Ich"/>
                                 </constraints>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of people" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpY-Zr-w3h">
-                                <rect key="frame" x="16" y="494" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG0-Vi-2Gb">
-                                <rect key="frame" x="16" y="560" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Drop Aid">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="dropAidButtonTapped:" destination="D9A-D8-vxm" eventType="touchUpInside" id="a9J-tF-7UM"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jdb-BU-YCc">
-                                <rect key="frame" x="16" y="430" width="343" height="29"/>
-                                <segments>
-                                    <segment title="🍝"/>
-                                    <segment title="👕"/>
-                                    <segment title="🚑"/>
-                                </segments>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-Ci-XHU">
+                                <rect key="frame" x="12" y="403" width="351" height="177"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d8s-tO-Ph2">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="29"/>
+                                        <segments>
+                                            <segment title="🍝"/>
+                                            <segment title="👕"/>
+                                            <segment title="🚑"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of people" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibM-WX-dhB">
+                                        <rect key="frame" x="0.0" y="36" width="351" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-wU-e2V">
+                                        <rect key="frame" x="0.0" y="74" width="351" height="65"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="dSk-fN-EKX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-Ob-3wn">
+                                        <rect key="frame" x="0.0" y="147" width="351" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Drop Aid">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dropAidButtonTapped:" destination="D9A-D8-vxm" eventType="touchUpInside" id="ORV-C1-ifr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Uzf-wU-e2V" firstAttribute="top" secondItem="ibM-WX-dhB" secondAttribute="bottom" constant="8" id="9YW-C7-s26"/>
+                                    <constraint firstItem="gE5-Ob-3wn" firstAttribute="top" secondItem="Uzf-wU-e2V" secondAttribute="bottom" constant="8" id="JJZ-Cv-QNJ"/>
+                                    <constraint firstItem="Uzf-wU-e2V" firstAttribute="leading" secondItem="qEc-Ci-XHU" secondAttribute="leadingMargin" id="Mdv-zW-yOI"/>
+                                    <constraint firstItem="ibM-WX-dhB" firstAttribute="top" secondItem="d8s-tO-Ph2" secondAttribute="bottom" constant="8" id="Piy-wr-3Qu"/>
+                                    <constraint firstItem="Uzf-wU-e2V" firstAttribute="trailing" secondItem="qEc-Ci-XHU" secondAttribute="trailingMargin" id="toq-4C-gab"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YpY-Zr-w3h" firstAttribute="top" secondItem="Jdb-BU-YCc" secondAttribute="bottom" constant="36" id="1ey-az-3GO"/>
-                            <constraint firstItem="VFU-Le-1hQ" firstAttribute="leading" secondItem="U0g-oP-km4" secondAttribute="leading" id="54l-6n-xeB"/>
-                            <constraint firstItem="Jdb-BU-YCc" firstAttribute="leading" secondItem="U0g-oP-km4" secondAttribute="leading" constant="16" id="5y6-G8-Rue"/>
-                            <constraint firstItem="U0g-oP-km4" firstAttribute="trailing" secondItem="YpY-Zr-w3h" secondAttribute="trailing" constant="16" id="DTd-1A-NTb"/>
-                            <constraint firstItem="YpY-Zr-w3h" firstAttribute="leading" secondItem="U0g-oP-km4" secondAttribute="leading" constant="16" id="FUP-o4-HzG"/>
-                            <constraint firstItem="Jdb-BU-YCc" firstAttribute="top" secondItem="VFU-Le-1hQ" secondAttribute="bottom" constant="35" id="IbQ-nI-s3L"/>
-                            <constraint firstItem="Jdb-BU-YCc" firstAttribute="top" secondItem="VFU-Le-1hQ" secondAttribute="bottom" constant="35" id="NeK-fb-KB0"/>
-                            <constraint firstItem="U0g-oP-km4" firstAttribute="trailing" secondItem="Jdb-BU-YCc" secondAttribute="trailing" constant="16" id="RB2-H9-azL"/>
-                            <constraint firstItem="VFU-Le-1hQ" firstAttribute="top" secondItem="U0g-oP-km4" secondAttribute="top" id="Unv-N9-vXU"/>
-                            <constraint firstItem="VFU-Le-1hQ" firstAttribute="trailing" secondItem="U0g-oP-km4" secondAttribute="trailing" id="dgF-hn-Tpg"/>
-                            <constraint firstItem="yG0-Vi-2Gb" firstAttribute="top" secondItem="YpY-Zr-w3h" secondAttribute="bottom" constant="36" id="f9u-sM-Ev0"/>
-                            <constraint firstItem="U0g-oP-km4" firstAttribute="trailing" secondItem="yG0-Vi-2Gb" secondAttribute="trailing" constant="16" id="sSr-1l-6ma"/>
-                            <constraint firstItem="yG0-Vi-2Gb" firstAttribute="leading" secondItem="U0g-oP-km4" secondAttribute="leading" constant="16" id="skk-As-SXt"/>
+                            <constraint firstItem="qEc-Ci-XHU" firstAttribute="top" secondItem="GSm-Xy-7IX" secondAttribute="bottom" constant="8" id="Cru-Ig-OGC"/>
+                            <constraint firstItem="GSm-Xy-7IX" firstAttribute="leading" secondItem="7nS-wB-REh" secondAttribute="leading" id="Jhw-bm-oIl"/>
+                            <constraint firstItem="GSm-Xy-7IX" firstAttribute="trailing" secondItem="7nS-wB-REh" secondAttribute="trailing" id="Tcs-9V-BOi"/>
+                            <constraint firstItem="7nS-wB-REh" firstAttribute="trailing" secondItem="qEc-Ci-XHU" secondAttribute="trailing" constant="12" id="cj8-3c-iUU"/>
+                            <constraint firstItem="GSm-Xy-7IX" firstAttribute="top" secondItem="j2V-Yr-hAW" secondAttribute="topMargin" id="fbv-4f-Nh9"/>
+                            <constraint firstItem="qEc-Ci-XHU" firstAttribute="leading" secondItem="7nS-wB-REh" secondAttribute="leading" constant="12" id="iB4-Qf-eVp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="U0g-oP-km4"/>
-                    </view>
+                        <viewLayoutGuide key="safeArea" id="7nS-wB-REh"/>
+                    </scrollView>
                     <tabBarItem key="tabBarItem" title="Drop Aid" id="lwy-WC-eMI"/>
                     <connections>
-                        <outlet property="aidTypeSelector" destination="Jdb-BU-YCc" id="dyE-cK-lox"/>
-                        <outlet property="mapView" destination="VFU-Le-1hQ" id="zET-ae-09L"/>
-                        <outlet property="quantityField" destination="YpY-Zr-w3h" id="MTc-2z-qRy"/>
+                        <outlet property="aidTypeSelector" destination="d8s-tO-Ph2" id="rh6-SS-5AG"/>
+                        <outlet property="mapView" destination="GSm-Xy-7IX" id="Szd-dk-E6G"/>
+                        <outlet property="notesField" destination="Uzf-wU-e2V" id="xxh-Rh-KjB"/>
+                        <outlet property="quantityField" destination="ibM-WX-dhB" id="BJY-KG-YTu"/>
+                        <outlet property="scrollView" destination="j2V-Yr-hAW" id="ITW-dr-NtB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1z-fc-XAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
