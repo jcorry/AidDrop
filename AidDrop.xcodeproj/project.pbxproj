@@ -19,6 +19,8 @@
 		D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */; };
 		D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */; };
 		D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */; };
+		D8C622A220015E4B00830575 /* KeyboardNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A120015E4B00830575 /* KeyboardNotifications.swift */; };
+		D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewController.swift; sourceTree = "<group>"; };
 		D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsMapViewController.swift; sourceTree = "<group>"; };
 		D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewCell.swift; sourceTree = "<group>"; };
+		D8C622A120015E4B00830575 /* KeyboardNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotifications.swift; sourceTree = "<group>"; };
+		D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */,
 				D842A6B11FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift */,
 				D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */,
+				D8C622A120015E4B00830575 /* KeyboardNotifications.swift */,
+				D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */,
 			);
 			path = AidDrop;
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 				D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */,
 				D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */,
 				D842A6AA1FE1744F007FD1C1 /* DropController.swift in Sources */,
+				D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */,
 				D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */,
+				D8C622A220015E4B00830575 /* KeyboardNotifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
