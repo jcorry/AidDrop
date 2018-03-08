@@ -21,6 +21,7 @@
 		D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */; };
 		D8C622A220015E4B00830575 /* KeyboardNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A120015E4B00830575 /* KeyboardNotifications.swift */; };
 		D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */; };
+		D8C622A62002D46200830575 /* DropDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A52002D46200830575 /* DropDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewCell.swift; sourceTree = "<group>"; };
 		D8C622A120015E4B00830575 /* KeyboardNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotifications.swift; sourceTree = "<group>"; };
 		D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsDelegate.swift; sourceTree = "<group>"; };
+		D8C622A52002D46200830575 /* DropDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDetailViewController.swift; sourceTree = "<group>"; };
+		D8D83FBD204F675700689711 /* Home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				D842A6941FE15966007FD1C1 /* MainViewController.swift */,
 				D842A6961FE15966007FD1C1 /* Main.storyboard */,
 				D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */,
+				D8D83FBD204F675700689711 /* Home.gpx */,
 				D842A6991FE15966007FD1C1 /* Assets.xcassets */,
 				D842A69B1FE15966007FD1C1 /* LaunchScreen.storyboard */,
 				D842A69E1FE15966007FD1C1 /* Info.plist */,
@@ -86,6 +90,7 @@
 				D842A6B31FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift */,
 				D8C622A120015E4B00830575 /* KeyboardNotifications.swift */,
 				D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */,
+				D8C622A52002D46200830575 /* DropDetailViewController.swift */,
 			);
 			path = AidDrop;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */,
 				D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */,
 				D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */,
+				D8C622A62002D46200830575 /* DropDetailViewController.swift in Sources */,
 				D842A6A81FE16B9B007FD1C1 /* Drop.swift in Sources */,
 				D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */,
 				D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */,
