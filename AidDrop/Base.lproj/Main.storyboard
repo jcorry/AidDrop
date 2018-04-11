@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byD-j9-I3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byD-j9-I3b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,6 +34,7 @@
                                 <action selector="navigationSegmentControlChanged:" destination="JcZ-Dd-iqO" eventType="valueChanged" id="aUG-KE-NrX"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="GXQ-Cw-afY"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ztu-fC-At9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,6 +121,7 @@
                                     <outlet property="ageLabel" destination="D1F-eB-QV5" id="FaK-2e-65Q"/>
                                     <outlet property="distanceLabel" destination="wVy-pO-Ula" id="8DZ-zu-b9w"/>
                                     <outlet property="symbolLabel" destination="oTC-UW-y9d" id="eCt-Sy-C06"/>
+                                    <segue destination="Vpm-x0-SVO" kind="show" id="6Qc-IK-JfA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -132,6 +134,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7Y-M6-oSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3085.5999999999999" y="217.24137931034485"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="H5v-Vc-UOh">
+            <objects>
+                <viewController id="Hnr-qu-n4A" customClass="DropDetailViewController" customModule="AidDrop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sqX-go-5sU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5HH-Pu-OTA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="8cc-kf-BiF"/>
+                                </constraints>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owp-ID-kAF">
+                                <rect key="frame" x="8" y="447" width="359" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" 🍝 for 1 person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zll-TC-Oul">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="detailLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxf-PG-aiB">
+                                        <rect key="frame" x="323" y="0.0" width="36" height="36"/>
+                                        <color key="backgroundColor" red="0.50516824780000003" green="0.85265544039999996" blue="0.5494389033" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="goButton"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="Go!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gxf-gb-A6e" firstAttribute="trailing" secondItem="Owp-ID-kAF" secondAttribute="trailing" constant="8" id="3om-ap-lb7"/>
+                            <constraint firstItem="Owp-ID-kAF" firstAttribute="top" secondItem="5HH-Pu-OTA" secondAttribute="bottom" constant="8" id="5Gc-By-ZgT"/>
+                            <constraint firstItem="Owp-ID-kAF" firstAttribute="top" secondItem="5HH-Pu-OTA" secondAttribute="bottom" constant="8" id="CGR-eP-MVH"/>
+                            <constraint firstItem="5HH-Pu-OTA" firstAttribute="top" secondItem="Gxf-gb-A6e" secondAttribute="top" id="Oxb-Zm-GgI"/>
+                            <constraint firstItem="5HH-Pu-OTA" firstAttribute="trailing" secondItem="Gxf-gb-A6e" secondAttribute="trailing" id="aIO-KH-K51"/>
+                            <constraint firstItem="5HH-Pu-OTA" firstAttribute="leading" secondItem="Gxf-gb-A6e" secondAttribute="leading" id="eAw-4q-hLA"/>
+                            <constraint firstItem="Owp-ID-kAF" firstAttribute="leading" secondItem="Gxf-gb-A6e" secondAttribute="leading" constant="8" id="mXU-wP-Xmy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gxf-gb-A6e"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="xPX-1r-rso">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gkh-B5-KFL"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="rgf-P3-f1E">
+                            <connections>
+                                <segue destination="osB-iy-ADk" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="5SN-AA-cYN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stH-RU-oUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="osB-iy-ADk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4870" y="529"/>
         </scene>
         <!--Drop Aid-->
         <scene sceneID="CVT-lK-CaQ">
@@ -148,24 +213,16 @@
                                 </constraints>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-Ci-XHU">
-                                <rect key="frame" x="12" y="403" width="351" height="177"/>
+                                <rect key="frame" x="12" y="403" width="351" height="141"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d8s-tO-Ph2">
-                                        <rect key="frame" x="0.0" y="0.0" width="351" height="29"/>
-                                        <segments>
-                                            <segment title="🍝"/>
-                                            <segment title="👕"/>
-                                            <segment title="🚑"/>
-                                        </segments>
-                                    </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of people" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibM-WX-dhB">
-                                        <rect key="frame" x="0.0" y="36" width="351" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-wU-e2V">
-                                        <rect key="frame" x="0.0" y="74" width="351" height="65"/>
+                                        <rect key="frame" x="0.0" y="38" width="351" height="65"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="dSk-fN-EKX"/>
@@ -174,7 +231,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-Ob-3wn">
-                                        <rect key="frame" x="0.0" y="147" width="351" height="30"/>
+                                        <rect key="frame" x="0.0" y="111" width="351" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Drop Aid">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,7 +245,6 @@
                                     <constraint firstItem="Uzf-wU-e2V" firstAttribute="top" secondItem="ibM-WX-dhB" secondAttribute="bottom" constant="8" id="9YW-C7-s26"/>
                                     <constraint firstItem="gE5-Ob-3wn" firstAttribute="top" secondItem="Uzf-wU-e2V" secondAttribute="bottom" constant="8" id="JJZ-Cv-QNJ"/>
                                     <constraint firstItem="Uzf-wU-e2V" firstAttribute="leading" secondItem="qEc-Ci-XHU" secondAttribute="leadingMargin" id="Mdv-zW-yOI"/>
-                                    <constraint firstItem="ibM-WX-dhB" firstAttribute="top" secondItem="d8s-tO-Ph2" secondAttribute="bottom" constant="8" id="Piy-wr-3Qu"/>
                                     <constraint firstItem="Uzf-wU-e2V" firstAttribute="trailing" secondItem="qEc-Ci-XHU" secondAttribute="trailingMargin" id="toq-4C-gab"/>
                                 </constraints>
                             </stackView>
@@ -206,7 +262,6 @@
                     </scrollView>
                     <tabBarItem key="tabBarItem" title="Drop Aid" id="lwy-WC-eMI"/>
                     <connections>
-                        <outlet property="aidTypeSelector" destination="d8s-tO-Ph2" id="rh6-SS-5AG"/>
                         <outlet property="mapView" destination="GSm-Xy-7IX" id="Szd-dk-E6G"/>
                         <outlet property="notesField" destination="Uzf-wU-e2V" id="xxh-Rh-KjB"/>
                         <outlet property="quantityField" destination="ibM-WX-dhB" id="BJY-KG-YTu"/>
@@ -253,6 +308,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pO-bp-LHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1427.2" y="529.83508245877067"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KsU-Qv-5ZO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vpm-x0-SVO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Db1-tg-asM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hnr-qu-n4A" kind="relationship" relationship="rootViewController" id="iaA-ec-79Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xph-9W-nyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3926" y="511"/>
         </scene>
     </scenes>
 </document>

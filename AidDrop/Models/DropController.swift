@@ -8,6 +8,8 @@
 
 import Foundation
 
-class DropController {
+public struct DropController {
     var collection: [Drop] = []
+    
+    // function to make the network request and populate the collection with managed objects created from the response
 }
