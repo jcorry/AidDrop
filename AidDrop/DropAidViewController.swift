@@ -9,24 +9,32 @@
 import CoreLocation
 import UIKit
 import MapKit
+import CoreData
 
 class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
-    var locationManager:CLLocationManager!
+    let locationManager = CLLocationManager()
     var dropController: DropController!
     var locationOverlay:MKCircle?
     var activeField: UITextView?
     private var keyboardNotifications: KeyboardNotifications!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var context: NSManagedObjectContext! = NSManagedObjectContext()
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var aidTypeSelector: UISegmentedControl!
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var notesField: UITextView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         // Do any additional setup after loading the view.
         let tbvc = self.tabBarController as! MainViewController
         dropController = tbvc.dropController
@@ -74,26 +82,24 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         keyboardNotifications.isEnabled = false
     }
     
-    
-    
     @IBAction func dropAidButtonTapped(_ sender: UIButton) {
         // Create a new Drop
-        var drop: Drop!
-        if let aidTypeValue = self.aidTypeSelector.titleForSegment(at: aidTypeSelector.selectedSegmentIndex) {
-            drop = Drop(
-                location: CLLocation(
-                    latitude: self.mapView.centerCoordinate.latitude,
-                    longitude: self.mapView.centerCoordinate.longitude
-                ),
-                aidType: AidType(rawValue: aidTypeValue)!,
-                quantity: Int(quantityField.text!)
-            )
-            drop.notes = notesField.text
-        }
+        
+        let drop = Drop(
+            latitude: Float(self.mapView.centerCoordinate.latitude),
+            longitude: Float(self.mapView.centerCoordinate.longitude),
+            quantity: Int16(quantityField.text!)!,
+            notes: notesField.text,
+            entity: Drop.entity(),
+            insertInto: self.context
+        )
+        
+        appDelegate.saveContext()
         
         // Add the Drop to the collection
         dropController.collection.append(drop)
-        
+    
+    
         // Update the tab bar badge
         updateViewDropsTabBarBadge()
     }
@@ -102,9 +108,9 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     * Centers the map on the location
     */
     func centerMapOnUserLocation() {
+        print("Centering map...")
         // guard self.mapView.showsUserLocation else { return }
         // Can I get the user's location?
-        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -141,7 +147,6 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            locationManager = CLLocationManager()
             locationManager.requestWhenInUseAuthorization()
         }
     }
@@ -160,11 +165,13 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.becomeFirstResponder()
         quantityField.text = ""
         self.activeField = nil
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.becomeFirstResponder()
         print("Setting activeField")
         self.activeField = textView
     }
@@ -176,9 +183,10 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     
     func updateViewDropsTabBarBadge() {
-        if let tabItems = self.tabBarController?.tabBar.items as Array! {
-            let viewDropsTabBarItem = tabItems[1] as UITabBarItem
-            viewDropsTabBarItem.badgeValue = String(self.dropController.collection.count)
+        if let tabItems = self.tabBarController?.tabBar.items as NSArray? {
+            // In this case we want to modify the badge number of the third tab:
+            let tabItem = tabItems[1] as! UITabBarItem
+            tabItem.badgeValue = String(self.dropController.collection.count)
         }
     }
     
@@ -191,28 +199,27 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-
 }
 
 extension DropAidViewController: KeyboardNotificationsDelegate {
     func keyboardDidShow(notification: NSNotification) {
         print("Keyboard did show")
-        let userInfo = notification.userInfo!
-        
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-        
-        if (self.activeField != nil) {
-            print("Trying to scroll view...")
-            self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
-            self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
-        }
     }
     
     func keyboardDidHide(notification: NSNotification) {
-        print("Keyboard will hide")
+        print("Keyboard did hide")
+    }
+    
+    func keyboardWillShow(notification:NSNotification) {
+        guard let keyboardFrameValue = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+            return
+        }
+        let keyboardFrame = view.convert(keyboardFrameValue.cgRectValue, from: nil)
+        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrame.size.height)
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        scrollView.contentOffset = .zero
     }
 }
 

@@ -9,12 +9,29 @@
 import UIKit
 import CoreLocation
 import NotificationCenter
+import CoreData
 
 class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
     
     var dropController: DropController!
     var currentLocation: CLLocation!
     var locationManager: CLLocationManager!
+    var context: NSManagedObjectContext?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate?
+        self.context = appDelegate?.persistentContainer.viewContext
+        
+        // Do any additional setup after loading the view.
+        let tbvc = self.tabBarController as! MainViewController
+        dropController = tbvc.dropController
+        do {
+            dropController.collection = try self.context.fetch(Drop.fetchRequest())
+        } catch let error as NSError {
+            print("Could not fetch, \(error), \(error.userInfo)")
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -25,9 +42,6 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         
-        // Do any additional setup after loading the view.
-        let tbvc = self.tabBarController as! MainViewController
-        dropController = tbvc.dropController
         checkLocationAuthorizationStatus()
         updateUserLocation()
     }

@@ -26,24 +26,25 @@ class ViewDropsTableViewCell: UITableViewCell {
     }
     
     func update(with drop: Drop, from: CLLocation) {
-        self.symbolLabel.text = drop.aidType.description
         self.distanceLabel.text = "\(drop.getDistanceInKm(from: from)) km"
         
-        let dropTime = drop.timestamp
-        let now = Date()
-        let components = Calendar.current.dateComponents([.hour, .minute], from: dropTime, to: now)
-
+        if let dropTime = drop.created {
+            let now = Date()
+            let components = Calendar.current.dateComponents([.hour, .minute], from: dropTime as Date, to: now)
+            
+            
+            let dropAgeString = "\(components.minute!) min"
+            /**
+             if components.hour > 0 {
+             dropAgeString += "\(components.hour) hr "
+             }
+             if components.minute > 0 {
+             dropAgeString += "\(components.minute) min"
+             }
+             */
+            self.ageLabel.text = dropAgeString
+        }
         
-        var dropAgeString = "\(components.minute!) min"
-/**
-        if components.hour > 0 {
-            dropAgeString += "\(components.hour) hr "
-        }
-        if components.minute > 0 {
-            dropAgeString += "\(components.minute) min"
-        }
- */
-        self.ageLabel.text = dropAgeString
         print("\(drop)");
     }
 
