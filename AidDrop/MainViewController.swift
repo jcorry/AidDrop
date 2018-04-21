@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UITabBarController {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var dropController: DropController?
+    var managedContext: NSManagedObjectContext!
     
-    var dropController = DropController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.managedContext = appDelegate.persistentContainer.viewContext
+        self.dropController = DropController(context: managedContext)
     }
 
     override func didReceiveMemoryWarning() {

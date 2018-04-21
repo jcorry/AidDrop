@@ -83,23 +83,11 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     @IBAction func dropAidButtonTapped(_ sender: UIButton) {
-        // Create a new Drop
+        // Send a report to the web API
         
-        let drop = Drop(
-            latitude: Float(self.mapView.centerCoordinate.latitude),
-            longitude: Float(self.mapView.centerCoordinate.longitude),
-            quantity: Int16(quantityField.text!)!,
-            notes: notesField.text,
-            entity: Drop.entity(),
-            insertInto: self.context
-        )
+        // Call the dropcontroller's update func
         
-        appDelegate.saveContext()
         
-        // Add the Drop to the collection
-        dropController.collection.append(drop)
-    
-    
         // Update the tab bar badge
         updateViewDropsTabBarBadge()
     }

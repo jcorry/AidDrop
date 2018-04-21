@@ -21,7 +21,10 @@ class ViewDropsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        tableView.reloadData()
+        
+        let delta = 0.01
+        let locValue = self.currentLocation!
+        
         print("Items in dropController: \(self.dropController.collection.count)")
     }
 

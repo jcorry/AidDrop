@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80E1377207C54CC00017F22 /* Drop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80E1375207C54CC00017F22 /* Drop+CoreDataClass.swift */; };
+		D80E1378207C54CC00017F22 /* Drop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80E1376207C54CC00017F22 /* Drop+CoreDataProperties.swift */; };
 		D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6921FE15966007FD1C1 /* AppDelegate.swift */; };
 		D842A6951FE15966007FD1C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6941FE15966007FD1C1 /* MainViewController.swift */; };
 		D842A6981FE15966007FD1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D842A6961FE15966007FD1C1 /* Main.storyboard */; };
 		D842A69A1FE15966007FD1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D842A6991FE15966007FD1C1 /* Assets.xcassets */; };
 		D842A69D1FE15966007FD1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D842A69B1FE15966007FD1C1 /* LaunchScreen.storyboard */; };
 		D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */; };
-		D842A6A81FE16B9B007FD1C1 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A71FE16B9B007FD1C1 /* Drop.swift */; };
 		D842A6AA1FE1744F007FD1C1 /* DropController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6A91FE1744F007FD1C1 /* DropController.swift */; };
 		D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6AB1FE1D3C4007FD1C1 /* ViewDropsViewController.swift */; };
 		D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */; };
@@ -22,9 +23,13 @@
 		D8C622A220015E4B00830575 /* KeyboardNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A120015E4B00830575 /* KeyboardNotifications.swift */; };
 		D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */; };
 		D8C622A62002D46200830575 /* DropDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A52002D46200830575 /* DropDetailViewController.swift */; };
+		D8C9B75F2087F92200D1E908 /* MapRect+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9B75E2087F92200D1E908 /* MapRect+Utilities.swift */; };
+		D8DF0EDE207BF1A60051F247 /* AidDrop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0EDC207BF1A60051F247 /* AidDrop.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D80E1375207C54CC00017F22 /* Drop+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drop+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D80E1376207C54CC00017F22 /* Drop+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D842A68F1FE15966007FD1C1 /* AidDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AidDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D842A6921FE15966007FD1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D842A6941FE15966007FD1C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		D842A69C1FE15966007FD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D842A69E1FE15966007FD1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D842A6A41FE16217007FD1C1 /* DropAidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropAidViewController.swift; sourceTree = "<group>"; };
-		D842A6A71FE16B9B007FD1C1 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
 		D842A6A91FE1744F007FD1C1 /* DropController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropController.swift; sourceTree = "<group>"; };
 		D842A6AB1FE1D3C4007FD1C1 /* ViewDropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsViewController.swift; sourceTree = "<group>"; };
 		D842A6AF1FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDropsTableViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +46,9 @@
 		D8C622A120015E4B00830575 /* KeyboardNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotifications.swift; sourceTree = "<group>"; };
 		D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsDelegate.swift; sourceTree = "<group>"; };
 		D8C622A52002D46200830575 /* DropDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDetailViewController.swift; sourceTree = "<group>"; };
+		D8C9B75E2087F92200D1E908 /* MapRect+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapRect+Utilities.swift"; sourceTree = "<group>"; };
 		D8D83FBD204F675700689711 /* Home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
+		D8DF0EDD207BF1A60051F247 /* AidDrop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AidDrop.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 		D842A6911FE15966007FD1C1 /* AidDrop */ = {
 			isa = PBXGroup;
 			children = (
+				D8C9B75D2087F91000D1E908 /* Utilities */,
+				D8DF0EDB207BF18F0051F247 /* Resources */,
 				D842A6A61FE16B7E007FD1C1 /* Models */,
 				D842A6921FE15966007FD1C1 /* AppDelegate.swift */,
 				D842A6941FE15966007FD1C1 /* MainViewController.swift */,
@@ -98,10 +106,27 @@
 		D842A6A61FE16B7E007FD1C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D842A6A71FE16B9B007FD1C1 /* Drop.swift */,
+				D80E1375207C54CC00017F22 /* Drop+CoreDataClass.swift */,
+				D80E1376207C54CC00017F22 /* Drop+CoreDataProperties.swift */,
 				D842A6A91FE1744F007FD1C1 /* DropController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D8C9B75D2087F91000D1E908 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8C9B75E2087F92200D1E908 /* MapRect+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D8DF0EDB207BF18F0051F247 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8DF0EDC207BF1A60051F247 /* AidDrop.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,15 +203,18 @@
 			files = (
 				D842A6951FE15966007FD1C1 /* MainViewController.swift in Sources */,
 				D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */,
+				D8C9B75F2087F92200D1E908 /* MapRect+Utilities.swift in Sources */,
 				D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */,
+				D8DF0EDE207BF1A60051F247 /* AidDrop.xcdatamodeld in Sources */,
 				D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */,
 				D8C622A62002D46200830575 /* DropDetailViewController.swift in Sources */,
-				D842A6A81FE16B9B007FD1C1 /* Drop.swift in Sources */,
 				D842A6A51FE16217007FD1C1 /* DropAidViewController.swift in Sources */,
 				D842A6B21FE1E5BA007FD1C1 /* ViewDropsMapViewController.swift in Sources */,
 				D842A6AA1FE1744F007FD1C1 /* DropController.swift in Sources */,
 				D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */,
 				D842A6B41FE2BE2C007FD1C1 /* ViewDropsTableViewCell.swift in Sources */,
+				D80E1377207C54CC00017F22 /* Drop+CoreDataClass.swift in Sources */,
+				D80E1378207C54CC00017F22 /* Drop+CoreDataProperties.swift in Sources */,
 				D8C622A220015E4B00830575 /* KeyboardNotifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +371,7 @@
 				DEVELOPMENT_TEAM = 663QYFNAPK;
 				INFOPLIST_FILE = AidDrop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DRELEASE_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcorry.AidDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -372,6 +401,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8DF0EDC207BF1A60051F247 /* AidDrop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8DF0EDD207BF1A60051F247 /* AidDrop.xcdatamodel */,
+			);
+			currentVersion = D8DF0EDD207BF1A60051F247 /* AidDrop.xcdatamodel */;
+			path = AidDrop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D842A6871FE15965007FD1C1 /* Project object */;
 }

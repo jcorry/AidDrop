@@ -26,11 +26,6 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         let tbvc = self.tabBarController as! MainViewController
         dropController = tbvc.dropController
-        do {
-            dropController.collection = try self.context.fetch(Drop.fetchRequest())
-        } catch let error as NSError {
-            print("Could not fetch, \(error), \(error.userInfo)")
-        }
     }
     
 
@@ -48,7 +43,7 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -139,9 +134,27 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
         print("Location: \(locValue.coordinate.latitude) \(locValue.coordinate.longitude)")
         
         self.currentLocation = locValue
-        
         manager.stopUpdatingLocation()
-        add(asChildViewController: listViewController)
+        
+        let delta = 0.01
+        dropController.getCases(
+            maxLatitude: locValue.coordinate.latitude + delta,
+            maxLongitude: locValue.coordinate.longitude + delta,
+            minLatitude: locValue.coordinate.latitude - delta,
+            minLongitude: locValue.coordinate.longitude - delta,
+            completion: { result in
+                switch result {
+                case .success(let cases):
+                    print("success")
+                    self.dropController.collection = cases
+                    self.add(asChildViewController: self.listViewController)
+                case .empty():
+                    print("No results from API request")
+                case .failure(let error):
+                    fatalError("\(error)")
+                }
+            }
+        )
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -150,7 +163,7 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
             self.updateUserLocation()
         }
     }
-
+    
     /*
     // MARK: - Navigation
 
