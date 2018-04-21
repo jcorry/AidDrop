@@ -37,7 +37,6 @@ public struct DropController {
     }
     
     // function to make the network request and populate the collection with managed objects created from the response
-    
     func getCases(maxLatitude: Float64,
                   maxLongitude: Float64,
                   minLatitude: Float64,
@@ -96,6 +95,71 @@ public struct DropController {
                         completion?(.failure(error))
                     }
                 
+                } else {
+                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                    completion?(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    // Function to create a report
+    func createReport(lat: Float64,
+                      long: Float64,
+                      description: String,
+                      recipients: Int,
+                      completion: ((Result<Report>) -> Void)?
+    ) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = SERVER_SCHEME
+        urlComponents.host = SERVER_HOST
+        urlComponents.port = SERVER_PORT
+        urlComponents.path = "/reports"
+        
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components: \(urlComponents)")}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let json: [String: Any] = ["latitude": lat, "longitude": long, "description": description, "recipientsCount": recipients]
+        
+        do {
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            request.httpBody = jsonData
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+        } catch let error {
+            print("\(error)")
+        }
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                print("Making http call...")
+                if let error = error {
+                    completion?(.failure(error))
+                } else if let jsonData = data {
+                    // representation of the JSON returned to us
+                    // from our URLRequest...
+                    
+                    // Create an instance of JSONDecoder to decode the JSON data to our
+                    // Codable struct
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        // We would use Post.self for JSON representing a single Post
+                        // object, and [Post].self for JSON representing an array of
+                        // Post objects
+                        let report = try decoder.decode(Report.self, from: jsonData)
+                        completion?(.success(report))
+                    } catch {
+                        print("Request failed: \(url)")
+                        completion?(.failure(error))
+                    }
+                    
                 } else {
                     let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
                     completion?(.failure(error))

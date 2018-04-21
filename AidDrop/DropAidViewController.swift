@@ -83,10 +83,25 @@ class DropAidViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     @IBAction func dropAidButtonTapped(_ sender: UIButton) {
+        let recipients = Int(self.quantityField.text!) as! Int
+        
         // Send a report to the web API
-        
-        // Call the dropcontroller's update func
-        
+        self.dropController.createReport(
+            lat: self.mapView.centerCoordinate.latitude,
+            long: self.mapView.centerCoordinate.longitude,
+            description: self.notesField.text,
+            recipients: recipients,
+            completion: { result in
+                switch result {
+                case .success(let report):
+                    print("success")
+                case .empty():
+                    print("No results from API request")
+                case .failure(let error):
+                    fatalError("\(error)")
+                }
+            }
+        )
         
         // Update the tab bar badge
         updateViewDropsTabBarBadge()
