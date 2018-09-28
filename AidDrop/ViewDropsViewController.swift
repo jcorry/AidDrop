@@ -151,7 +151,7 @@ class ViewDropsViewController: UIViewController, CLLocationManagerDelegate {
                 case .empty():
                     print("No results from API request")
                 case .failure(let error):
-                    fatalError("\(error)")
+                    print(error)
                 }
             }
         )

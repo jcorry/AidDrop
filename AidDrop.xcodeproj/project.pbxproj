@@ -24,6 +24,7 @@
 		D8C622A420015E8E00830575 /* KeyboardNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */; };
 		D8C622A62002D46200830575 /* DropDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C622A52002D46200830575 /* DropDetailViewController.swift */; };
 		D8C9B75F2087F92200D1E908 /* MapRect+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9B75E2087F92200D1E908 /* MapRect+Utilities.swift */; };
+		D8CD4ECC208AEA0000CD9DB1 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4ECB208AEA0000CD9DB1 /* Report.swift */; };
 		D8DF0EDE207BF1A60051F247 /* AidDrop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0EDC207BF1A60051F247 /* AidDrop.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		D8C622A320015E8E00830575 /* KeyboardNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsDelegate.swift; sourceTree = "<group>"; };
 		D8C622A52002D46200830575 /* DropDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDetailViewController.swift; sourceTree = "<group>"; };
 		D8C9B75E2087F92200D1E908 /* MapRect+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapRect+Utilities.swift"; sourceTree = "<group>"; };
+		D8CD4ECB208AEA0000CD9DB1 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		D8D83FBD204F675700689711 /* Home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
 		D8DF0EDD207BF1A60051F247 /* AidDrop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AidDrop.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				D80E1375207C54CC00017F22 /* Drop+CoreDataClass.swift */,
 				D80E1376207C54CC00017F22 /* Drop+CoreDataProperties.swift */,
 				D842A6A91FE1744F007FD1C1 /* DropController.swift */,
+				D8CD4ECB208AEA0000CD9DB1 /* Report.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				D842A6951FE15966007FD1C1 /* MainViewController.swift in Sources */,
 				D842A6931FE15966007FD1C1 /* AppDelegate.swift in Sources */,
 				D8C9B75F2087F92200D1E908 /* MapRect+Utilities.swift in Sources */,
+				D8CD4ECC208AEA0000CD9DB1 /* Report.swift in Sources */,
 				D842A6AC1FE1D3C4007FD1C1 /* ViewDropsViewController.swift in Sources */,
 				D8DF0EDE207BF1A60051F247 /* AidDrop.xcdatamodeld in Sources */,
 				D842A6B01FE1E5A8007FD1C1 /* ViewDropsTableViewController.swift in Sources */,
